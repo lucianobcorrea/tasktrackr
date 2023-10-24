@@ -1,8 +1,8 @@
 package br.feevale.security.controller;
 
-import br.com.cwi.crescer.biblioteca.security.controller.request.UsuarioRequest;
-import br.com.cwi.crescer.biblioteca.security.controller.response.UsuarioResponse;
-import br.com.cwi.crescer.biblioteca.security.service.IncluirUsuarioService;
+import br.feevale.security.controller.request.UsuarioRequest;
+import br.feevale.security.controller.response.UsuarioResponse;
+import br.feevale.security.service.IncluirUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

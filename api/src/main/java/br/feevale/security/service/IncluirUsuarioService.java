@@ -2,16 +2,16 @@ package br.feevale.security.service;
 
 import br.feevale.security.controller.request.UsuarioRequest;
 import br.feevale.security.controller.response.UsuarioResponse;
-import br.com.cwi.crescer.biblioteca.security.domain.Permissao;
-import br.com.cwi.crescer.biblioteca.security.domain.Usuario;
+import br.feevale.security.domain.Permissao;
+import br.feevale.security.domain.Usuario;
 import br.feevale.security.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import static br.com.cwi.crescer.biblioteca.security.domain.Funcao.USUARIO;
-import static br.com.cwi.crescer.biblioteca.security.mapper.UsuarioMapper.toEntity;
-import static br.com.cwi.crescer.biblioteca.security.mapper.UsuarioMapper.toResponse;
+import static br.feevale.security.domain.Funcao.USUARIO;
+import static br.feevale.security.mapper.UsuarioMapper.toEntity;
+import static br.feevale.security.mapper.UsuarioMapper.toResponse;
 
 @Service
 public class IncluirUsuarioService {

@@ -1,6 +1,6 @@
 package br.feevale.factories;
 
-import br.com.cwi.crescer.biblioteca.security.domain.Usuario;
+import br.feevale.security.domain.Usuario;
 
 public class UsuarioFactory {
 
