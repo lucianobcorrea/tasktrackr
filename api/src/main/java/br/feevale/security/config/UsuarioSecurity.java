@@ -2,9 +2,11 @@ package br.feevale.security.config;
 
 import br.feevale.security.domain.Usuario;
 import lombok.Getter;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +16,6 @@ public class UsuarioSecurity implements UserDetails {
     private final Long id;
     private final String username;
     private final String password;
-    private final List<SimpleGrantedAuthority> authorities;
 
     private final boolean accountNonExpired;
     private final boolean accountNonLocked;
@@ -31,9 +32,10 @@ public class UsuarioSecurity implements UserDetails {
         this.accountNonLocked = usuario.isAtivo();
         this.credentialsNonExpired = usuario.isAtivo();
         this.enabled = usuario.isAtivo();
+    }
 
-        this.authorities = usuario.getPermissoes().stream()
-                .map(permissao -> new SimpleGrantedAuthority(permissao.getFuncao().getRole()))
-                .collect(Collectors.toList());
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
     }
 }

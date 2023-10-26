@@ -31,17 +31,16 @@ public class Usuario {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false, unique = true)
+    private String telefone;
+
+    private String foto;
+
+    private int points;
+
     @Column(nullable = false)
     private String senha;
 
     @Column(nullable = false)
     private boolean ativo;
-
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Permissao> permissoes = new ArrayList<>();
-
-    public void adicionarPermissao(Permissao permissao) {
-        this.permissoes.add(permissao);
-        permissao.setUsuario(this);
-    }
 }

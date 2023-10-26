@@ -12,9 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 import static java.time.LocalDate.now;
 import static java.util.Arrays.*;
 import static java.util.stream.Collectors.*;

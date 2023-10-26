@@ -10,6 +10,8 @@ public class UsuarioMapper {
         Usuario entity = new Usuario();
         entity.setNome(request.getNome());
         entity.setEmail(request.getEmail());
+        entity.setTelefone(request.getTelefone());
+        entity.setFoto(request.getFoto());
         return entity;
     }
 
@@ -18,6 +20,8 @@ public class UsuarioMapper {
         response.setId(entity.getId());
         response.setNome(entity.getNome());
         response.setEmail(entity.getEmail());
+        response.setTelefone(entity.getTelefone());
+        response.setFoto(entity.getFoto());
         return response;
     }
 }

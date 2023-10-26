@@ -20,4 +20,8 @@ public class UsuarioRequest {
 
     @NotBlank
     private String senha;
+
+    private String telefone;
+
+    private String foto;
 }

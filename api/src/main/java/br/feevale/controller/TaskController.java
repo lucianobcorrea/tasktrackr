@@ -3,21 +3,15 @@ package br.feevale.controller;
 import br.feevale.controller.request.CreateTaskRequest;
 import br.feevale.controller.request.UpdateTaskRequest;
 import br.feevale.controller.response.TaskResponse;
-import br.feevale.repository.TaskRepository;
-import br.feevale.service.CreateTaskService;
-import br.feevale.service.DeleteTaskService;
-import br.feevale.service.ListTaskService;
-import br.feevale.service.UpdateTaskService;
+import br.feevale.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/tasks")
@@ -35,6 +29,9 @@ public class TaskController {
     @Autowired
     private ListTaskService listTaskService;
 
+    @Autowired
+    private CompleteTaskService completeTaskService;
+
     @PostMapping
     @ResponseStatus(CREATED)
     public TaskResponse create(@Valid @RequestBody CreateTaskRequest request) {
@@ -48,7 +45,7 @@ public class TaskController {
     }
 
     @DeleteMapping("/{id}/delete")
-    @ResponseStatus(OK)
+    @ResponseStatus(NO_CONTENT)
     public void delete(@PathVariable Long id) {
         deleteTaskService.deleteTask(id);
     }
@@ -56,5 +53,11 @@ public class TaskController {
     @GetMapping
     public Page<TaskResponse> list(Pageable pageable, String filter) {
         return listTaskService.listTask(pageable, filter);
+    }
+
+    @PatchMapping("/{id}/complete")
+    @ResponseStatus(NO_CONTENT)
+    public void complete(@PathVariable Long id) {
+        completeTaskService.completeTask(id);
     }
 }

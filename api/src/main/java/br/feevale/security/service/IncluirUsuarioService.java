@@ -2,14 +2,13 @@ package br.feevale.security.service;
 
 import br.feevale.security.controller.request.UsuarioRequest;
 import br.feevale.security.controller.response.UsuarioResponse;
-import br.feevale.security.domain.Permissao;
 import br.feevale.security.domain.Usuario;
 import br.feevale.security.repository.UsuarioRepository;
+import br.feevale.security.service.validator.ImageExtensionValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import static br.feevale.security.domain.Funcao.USUARIO;
 import static br.feevale.security.mapper.UsuarioMapper.toEntity;
 import static br.feevale.security.mapper.UsuarioMapper.toResponse;
 
@@ -22,12 +21,18 @@ public class IncluirUsuarioService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private ImageExtensionValidator imageExtensionValidator;
+
     public UsuarioResponse incluir(UsuarioRequest request) {
 
         Usuario usuario = toEntity(request);
         usuario.setSenha(getSenhaCriptografada(request.getSenha()));
-        usuario.adicionarPermissao(getPermissaoPadrao());
         usuario.setAtivo(true);
+
+        if(request.getFoto() != null) {
+            imageExtensionValidator.validate(request.getFoto().split("\\."));
+        }
 
         usuarioRepository.save(usuario);
 
@@ -36,11 +41,5 @@ public class IncluirUsuarioService {
 
     private String getSenhaCriptografada(String senhaAberta) {
         return passwordEncoder.encode(senhaAberta);
-    }
-
-    private Permissao getPermissaoPadrao() {
-        Permissao permissao = new Permissao();
-        permissao.setFuncao(USUARIO);
-        return permissao;
     }
 }

@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
@@ -22,7 +21,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
             Pageable pageable
     );
 
-    @Query("SELECT t FROM Tarefa t WHERE t.user = :user AND t.status = :status AND DATE(t.deadlineDate) = :deadLineDate ")
+    @Query("SELECT t FROM Task t WHERE t.user = :user AND t.status = :status AND DATE(t.deadlineDate) = :deadLineDate ")
     Page<Task> findByUserAndStatusAndDay(
             @Param("user") Usuario user,
             @Param("status") Status status,
