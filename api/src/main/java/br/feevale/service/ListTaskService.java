@@ -29,28 +29,33 @@ public class ListTaskService {
     public Page<TaskResponse> listTask(Pageable pageable, String filter) {
         Usuario authenticatedUser = user.get();
 
-        if (filter.equalsIgnoreCase("late")) {
-            return taskRepository
-                    .findByUserAndStatusAndLate(
-                            authenticatedUser,
-                            Status.IN_PROGRESS,
-                            now(),
-                            pageable)
-                    .map(TaskMapper::toResponse);
-        }
+        if(filter == null) {
+            return taskRepository.findAllByUser(authenticatedUser, pageable).map(TaskMapper::toResponse);
+        }else {
+            if (filter.equalsIgnoreCase("late")) {
+                return taskRepository
+                        .findByUserAndStatusAndLate(
+                                authenticatedUser,
+                                Status.IN_PROGRESS,
+                                now(),
+                                pageable)
+                        .map(TaskMapper::toResponse);
+            }
 
-        if (filter.equalsIgnoreCase("today")) {
-            return taskRepository
-                    .findByUserAndStatusAndDay(
-                            authenticatedUser,
-                            Status.IN_PROGRESS,
-                            now(),
-                            pageable)
-                    .map(TaskMapper::toResponse);
-        }
+            if (filter.equalsIgnoreCase("today")) {
+                return taskRepository
+                        .findByUserAndStatusAndDay(
+                                authenticatedUser,
+                                Status.IN_PROGRESS,
+                                now(),
+                                pageable)
+                        .map(TaskMapper::toResponse);
+            }
 
-        Status filteredStatus = buscaStatus(filter);
-        return taskRepository.findByUserAndStatus(authenticatedUser, filteredStatus, pageable).map(TaskMapper::toResponse);
+            Status filteredStatus = buscaStatus(filter);
+
+            return taskRepository.findByUserAndStatus(authenticatedUser, filteredStatus, pageable).map(TaskMapper::toResponse);
+        }
     }
 
     public Status buscaStatus(String filter) {

@@ -1,5 +1,6 @@
 package br.feevale.controller.request;
 
+import br.feevale.domain.Priority;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -20,4 +21,7 @@ public class UpdateTaskRequest {
 
     @NotNull(message = "Data prazo para concluir tarefa deve ser preenchido")
     public LocalDateTime deadlineDate;
+
+    @NotNull
+    private Priority priority;
 }

@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
@@ -30,4 +31,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     );
 
     Page<Task> findByUserAndStatus(Usuario authenticatedUser, Status filteredStatus, Pageable pageable);
+
+    Page<Task> findAllByUser(Usuario authenticatedUser, Pageable pageable);
 }

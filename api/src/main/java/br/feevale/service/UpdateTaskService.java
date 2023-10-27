@@ -4,7 +4,6 @@ import br.feevale.controller.request.UpdateTaskRequest;
 import br.feevale.controller.response.TaskResponse;
 import br.feevale.domain.Task;
 import br.feevale.mapper.TaskMapper;
-import br.feevale.mapper.UpdateTaskMapper;
 import br.feevale.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +23,10 @@ public class UpdateTaskService {
     public TaskResponse updateTask(UpdateTaskRequest request, Long id) {
         Task task = byId(id);
 
-        task = UpdateTaskMapper.updateTask(request);
+        task.setTitle(request.getTitle());
+        task.setDescription(request.getDescription());
+        task.setDeadlineDate(request.getDeadlineDate());
+        task.setPriority(request.getPriority());
 
         taskRepository.save(task);
 
