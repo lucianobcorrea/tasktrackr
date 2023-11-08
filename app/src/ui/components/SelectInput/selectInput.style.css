@@ -1,0 +1,19 @@
+.selectInput-label {
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.select-input {
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  padding: 15px 10px;
+  font-size: 16px;
+  border-color: rgb(236, 236, 236);
+  transition: all 0.2s ease;
+  outline-color: rgb(236, 236, 236);
+}
+
+.select-input:focus {
+  background-color: #fff;
+}

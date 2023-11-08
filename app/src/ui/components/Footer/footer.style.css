@@ -1,0 +1,22 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3rem;
+  background: #2054b6;
+}
+
+.footer p {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.footer-follow-scroll {
+  position: fixed;
+  z-index: 2;
+}

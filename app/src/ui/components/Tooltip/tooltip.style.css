@@ -1,0 +1,33 @@
+.tool {
+  z-index: 0;
+}
+
+.tool::before,
+.tool::after {
+  left: 50%;
+  opacity: 0;
+  z-index: -100;
+}
+
+.tool::after {
+  background: #3e474f9a;
+  border-radius: 0.25em;
+  color: #edeff0;
+  content: attr(data-tip);
+  text-align: center;
+  transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26) 0.2s;
+  width: 80px;
+  padding: 5px;
+  position: relative;
+  top: -2em;
+  left: -2.5em;
+}
+
+.tool:hover::before,
+.tool:focus::before,
+.tool:hover::after,
+.tool:focus::after {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  z-index: 100;
+}

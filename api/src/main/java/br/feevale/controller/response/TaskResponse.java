@@ -4,6 +4,7 @@ import br.feevale.domain.Priority;
 import br.feevale.domain.Status;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor @AllArgsConstructor @Builder @Getter @Setter
@@ -15,7 +16,7 @@ public class TaskResponse {
 
     private LocalDateTime createdAt;
     private LocalDateTime deadlineDate;
-    private LocalDateTime finishDate;
+    private LocalDate finishDate;
 
     private Status status;
     private Priority priority;

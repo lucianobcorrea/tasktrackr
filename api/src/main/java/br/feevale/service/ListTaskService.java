@@ -12,6 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
+
 import static java.time.LocalDate.now;
 import static java.util.Arrays.*;
 import static java.util.stream.Collectors.*;
@@ -29,15 +31,12 @@ public class ListTaskService {
     public Page<TaskResponse> listTask(Pageable pageable, String filter) {
         Usuario authenticatedUser = user.get();
 
-        if(filter == null) {
-            return taskRepository.findAllByUser(authenticatedUser, pageable).map(TaskMapper::toResponse);
-        }else {
             if (filter.equalsIgnoreCase("late")) {
                 return taskRepository
                         .findByUserAndStatusAndLate(
                                 authenticatedUser,
                                 Status.IN_PROGRESS,
-                                now(),
+                                LocalDateTime.now(),
                                 pageable)
                         .map(TaskMapper::toResponse);
             }
@@ -55,7 +54,6 @@ public class ListTaskService {
             Status filteredStatus = buscaStatus(filter);
 
             return taskRepository.findByUserAndStatus(authenticatedUser, filteredStatus, pageable).map(TaskMapper::toResponse);
-        }
     }
 
     public Status buscaStatus(String filter) {

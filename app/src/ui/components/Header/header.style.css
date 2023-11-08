@@ -1,0 +1,129 @@
+.header {
+  background: #2054b6;
+  height: 10vh;
+}
+
+.header-follows-scroll {
+  background: #2054b6;
+  height: 10vh;
+  position: fixed;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.header-container h1 {
+  color: #fff;
+}
+
+.menu {
+  justify-content: space-between;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.menu > li {
+  font-size: 22px;
+  padding: 0 10px;
+  color: #848484;
+  font-weight: 500;
+}
+
+li > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link-transition {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.link-transition:after {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.2s ease;
+}
+
+.link-transition:hover::after {
+  width: 100%;
+}
+
+.avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+.avatar-logout-box {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.drop-down-menu {
+  display: none;
+  background-color: #6e7786;
+  position: absolute;
+  border-radius: 10px;
+  top: 100%;
+  width: 170px;
+  z-index: 1;
+  border: 1px solid #d6d6d6;
+  animation: dropdown-animation 0.5s;
+}
+
+.avatar-logout-box:hover .drop-down-menu {
+  display: flex;
+}
+
+.drop-down-menu:after {
+  content: ' ';
+  position: absolute;
+  bottom: 105%;
+  left: 45%;
+  margin-left: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.drop-down-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drop-down-menu-item {
+  list-style-type: none;
+}
+
+@keyframes dropdown-animation {
+  0% {
+    opacity: 0;
+    top: 50%;
+  }
+  100% {
+    opacity: 1;
+    top: 100%;
+  }
+}

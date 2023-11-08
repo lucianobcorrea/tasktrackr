@@ -1,0 +1,153 @@
+.stats-section {
+  width: 30%;
+  color: #6a6a6a;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.stats-title {
+  font-weight: lighter;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.stats-medal {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+}
+
+.stats-infos {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #eaeaea;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 7px;
+}
+.point-info {
+  justify-content: space-between;
+}
+.point-info-content {
+  display: flex;
+}
+.point-info-question {
+  color: rgba(128, 128, 128, 0.526);
+  width: 20px;
+  height: 20px;
+  transition: 0.2s;
+}
+.point-info-question:hover {
+  color: rgba(128, 128, 128, 0.749);
+}
+.point-info-question:active {
+  color: grey;
+}
+
+.stats-about-point-section {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.stats-about-point-title {
+  margin-bottom: 10px;
+  color: rgb(42, 42, 42);
+}
+
+.stats-about-point-title-subtitle {
+  margin-bottom: 10px;
+  color: rgba(42, 42, 42, 0.412);
+  /* font-weight: light; */
+  font-size: 18px;
+}
+
+.stats-about-content-container {
+  display: block;
+  width: 50%;
+  height: 100%;
+}
+
+.graph-period-select {
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  height: 100%;
+}
+
+.stats-chart-div {
+  margin-top: 10px;
+}
+
+.stats-info-quantity {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.stats-about-content {
+  text-align: justify;
+}
+
+.stats-level-container {
+  width: 50%;
+}
+
+.stats-level-div {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
+.stats-level-name {
+  display: inline-block;
+  font-weight: bold;
+  color: #6a6a6a;
+}
+
+.stats-level-range {
+  color: rgba(128, 128, 128, 0.9);
+  display: inline-block;
+  width: 80%;
+  text-align: right;
+  font-style: italic;
+}
+
+.stats-select-info-div {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-select-info-icon {
+  box-sizing: border-box;
+  width: 10%;
+  height: 100%;
+  padding: 5px;
+  /* margin-right: 10px; */
+  border: 1px solid rgba(128, 128, 128, 0.507);
+  color: rgba(128, 128, 128, 0.507);
+  transition: 0.2s;
+}
+.stats-select-info-icon:hover {
+  background-color: rgba(128, 128, 128, 0.668);
+  color: #fff;
+}
+.stats-select-info-icon:active {
+  background-color: rgba(128, 128, 128, 0.815);
+  color: #dcd9d9;
+}
+
+.stats-about-graph-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}

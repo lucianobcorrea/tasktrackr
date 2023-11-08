@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.EnumMap;
 import java.util.Map;
@@ -41,7 +42,7 @@ public class CompleteTaskService {
                 .orElseThrow(() -> new ResponseStatusException(BAD_REQUEST));
 
         task.setStatus(COMPLETED);
-        task.setFinishDate(now());
+        task.setFinishDate(LocalDate.now());
 
         Map<Priority, Integer> points = new EnumMap<>(Priority.class);
         points.put(LOW, LOW.getPoints());

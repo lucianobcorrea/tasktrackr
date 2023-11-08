@@ -2,7 +2,10 @@ package br.feevale.security.controller;
 
 import br.feevale.security.controller.request.UsuarioRequest;
 import br.feevale.security.controller.request.UsuarioUpdateRequest;
+import br.feevale.security.controller.response.EstatisticaResponse;
 import br.feevale.security.controller.response.UsuarioResponse;
+import br.feevale.security.service.BuscarUsuarioService;
+import br.feevale.security.service.EstatisticaService;
 import br.feevale.security.service.IncluirUsuarioService;
 import br.feevale.security.service.UpdateUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,12 @@ public class UsuarioController {
     @Autowired
     private UpdateUserService updateUserService;
 
+    @Autowired
+    private BuscarUsuarioService buscarUsuarioService;
+
+    @Autowired
+    private EstatisticaService estatisticaService;
+
     @PostMapping
     @ResponseStatus(CREATED)
     public UsuarioResponse incluir(@RequestBody UsuarioRequest request) {
@@ -31,5 +40,16 @@ public class UsuarioController {
     @ResponseStatus(OK)
     public UsuarioResponse update(@RequestBody UsuarioUpdateRequest request) {
         return updateUserService.update(request);
+    }
+
+    @GetMapping("/me")
+    @ResponseStatus(OK)
+    public UsuarioResponse buscar() {
+        return buscarUsuarioService.buscar();
+    }
+
+    @GetMapping("/estatisticas/{tipoIntervalo}")
+    public EstatisticaResponse getEstatisticas(@PathVariable String tipoIntervalo) {
+        return estatisticaService.get(tipoIntervalo);
     }
 }

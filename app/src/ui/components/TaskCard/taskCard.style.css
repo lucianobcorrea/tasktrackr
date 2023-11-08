@@ -1,0 +1,265 @@
+.task-card {
+  font-family: 'Roboto', sans-serif;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(226, 226, 226);
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.task-card:hover {
+  background-color: rgb(239, 239, 239);
+  border-color: rgb(179, 179, 179);
+}
+
+.task-card:active {
+  background-color: rgb(203, 203, 203);
+}
+.task-card-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-right: 50px;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.task-card-icon {
+  color: rgb(149, 149, 149);
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+}
+.task-card-icon:hover {
+  color: #444444;
+}
+
+.tarefa-task-calendar-icon {
+  height: 15px;
+  width: 15px;
+}
+
+.task-priority-icon {
+  width: 15px;
+  height: 15px;
+  padding-top: 5px;
+  margin: 5px;
+}
+
+.task-priority-high {
+  color: rgb(235, 38, 38);
+}
+.task-priority-medium {
+  color: rgb(255, 181, 8);
+}
+.task-priority-low {
+  color: rgb(48, 72, 168);
+}
+
+.task-card-title-box {
+  display: flex;
+  align-items: center;
+}
+
+.tarefa-task-title {
+  color: #393434;
+}
+
+.task-card-infos {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  gap: 10px;
+}
+
+.task-card-infos p {
+  font-style: Light;
+  font-size: 14px;
+  line-height: 50px;
+  line-height: 261%;
+  color: #787878;
+  opacity: 100%;
+}
+
+.task-card-infos-expired-date {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-style: Light;
+  font-size: 14px;
+  color: rgb(225, 39, 39);
+  gap: 10px;
+  opacity: 100%;
+}
+
+.completed-card-animated {
+  animation-name: complete;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes complete {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+.task-detail-div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  height: 400px;
+  width: 600px;
+  gap: 10px;
+  font-weight: lighter;
+}
+
+.task-detail-title {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(50, 50, 50);
+  font-size: 23px;
+  margin-bottom: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.task-detail-description {
+  text-align: justify;
+  color: grey;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.task-toggle-update {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.314);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.task-toggle-update-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.task-detail-additional-info-div {
+  box-sizing: border-box;
+  background-color: rgba(216, 216, 216, 0.421);
+  height: 100%;
+  border-radius: 5px;
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+.remove-task-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 1em;
+  right: -1em;
+}
+
+.task-input-title {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(46, 46, 46);
+  font-size: 23px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border: none;
+  border-bottom: solid 1px grey;
+  padding-bottom: 5px;
+}
+
+.update-task-label {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.task-input-description {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(46, 46, 46);
+  margin-bottom: 15px;
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+  height: 150px;
+  resize: none;
+}
+
+.remove-task-icon {
+  color: rgb(100, 100, 100);
+  width: 100%;
+  height: 100%;
+}
+
+.task-detail-additional-info-title {
+  font-weight: bold;
+  color: grey;
+}
+.task-form-input-container {
+  margin-bottom: 10px;
+}
+
+.task-form-submit-button {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: #2054b6;
+  border: 1px solid #2054b6;
+  border-radius: 5px;
+  margin-right: 10px;
+  height: 30px;
+  width: 100px;
+}
+
+.task-form-cancel-button {
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+}

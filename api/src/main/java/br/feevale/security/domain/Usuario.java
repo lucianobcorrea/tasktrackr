@@ -1,14 +1,13 @@
 package br.feevale.security.domain;
 
+import br.feevale.domain.Task;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -43,4 +42,7 @@ public class Usuario {
 
     @Column(nullable = false)
     private boolean ativo;
+
+    @OneToMany(mappedBy = "user")
+    private List<Task> tarefas = new ArrayList<>();
 }

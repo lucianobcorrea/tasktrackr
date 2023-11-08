@@ -1,0 +1,17 @@
+export { changePass } from './auth/changePass.api';
+export { login } from './auth/login.api';
+export { logout } from './auth/logout.api';
+export { register } from './auth/registerUser.api';
+export { sendEmail } from './auth/sendEmail.api';
+export { completeTask } from './tasks/completeTask.api';
+export { getAllTasks } from './tasks/getTasks.api';
+export { removeTask } from './tasks/removeTask.api';
+export { updateTask } from './tasks/updateTask.api';
+export { isValidToken } from './token/isValidToken.api';
+export { editUser } from './users/editUser.api';
+export { getCadastredUsers } from './users/getCadastredUsers.api';
+export { getFilteredUsers } from './users/getFilteredUsers.api';
+export { getUserData } from './users/getUserData.api';
+export { getUserRanking } from './users/getUserRanking.api';
+export { getUserStats } from './users/getUserStats.api';
+export { registerTask } from './users/registerTask.api';

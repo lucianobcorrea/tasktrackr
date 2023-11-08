@@ -2,7 +2,6 @@ package br.feevale.mapper;
 
 import br.feevale.controller.request.CreateTaskRequest;
 import br.feevale.controller.response.TaskResponse;
-import br.feevale.domain.Status;
 import br.feevale.domain.Task;
 
 import static br.feevale.domain.Status.IN_PROGRESS;

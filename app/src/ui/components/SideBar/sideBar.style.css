@@ -1,0 +1,162 @@
+.icon {
+  position: absolute;
+  z-index: 4;
+  width: fit-content;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburguerWrapperOpened {
+  width: 40px;
+  padding: 10px;
+  background: #2054b6;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: openSideBarBackgroundX;
+  animation-duration: 0.8s;
+}
+
+.hamburguerWrapperClosed {
+  width: 37px;
+  height: 44px;
+  padding: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.hamburguer {
+  display: block;
+  top: 0;
+  width: 37px;
+  height: 6px;
+  background: black;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.hamburguer::before {
+  top: -12px;
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 6px;
+  background: black;
+  transition: 0.5s;
+}
+
+.hamburguer:after {
+  top: 12px;
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 6px;
+  background: black;
+  transition: 0.5s;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  left: 1%;
+  padding: 45px 15px 0;
+  word-break: break-all;
+  color: black;
+  height: 100%;
+  width: 100%;
+  animation-name: sideBarContentOpacity;
+  animation-duration: 1s;
+  user-select: none;
+}
+
+.list .listItems {
+  padding: 0;
+  list-style: none;
+}
+
+.hamburguer-follow-scroll {
+  top: 30px;
+  position: fixed;
+  z-index: 1;
+}
+
+.icon.iconActive .hamburguer {
+  background: transparent;
+  box-shadow: 0 2px 5px transparent;
+}
+
+.icon.iconActive .hamburguer:after {
+  top: 0;
+  background: white;
+  transform: rotate(225deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon.iconActive .hamburguer:before {
+  top: 0;
+  background: white;
+  transform: rotate(135deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu.menuOpen {
+  width: 430px;
+  height: 100vh;
+  position: absolute;
+  background: #2054b6;
+  animation-name: openSideBar;
+  animation-duration: 0.6s;
+  overflow: auto;
+}
+
+.menu.menuOpen::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-follows-scroll {
+  top: 0;
+  position: fixed;
+  height: 100%;
+}
+
+.list h1 {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.menu.menuClose {
+  display: none;
+}
+
+@keyframes openSideBar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 430px;
+  }
+}
+
+@keyframes openSideBarBackgroundX {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 40px;
+  }
+}
+
+@keyframes sideBarContentOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

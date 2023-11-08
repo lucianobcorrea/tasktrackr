@@ -1,0 +1,16 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  max-width: 400px;
+  padding: 40px 70px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.247);
+}
+
+.center-form {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}

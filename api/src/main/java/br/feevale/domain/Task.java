@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static javax.persistence.EnumType.STRING;
@@ -24,7 +25,7 @@ public class Task {
 
     private LocalDateTime createdAt;
     private LocalDateTime deadlineDate;
-    private LocalDateTime finishDate;
+    private LocalDate finishDate;
 
     @Enumerated(STRING)
     private Priority priority;
