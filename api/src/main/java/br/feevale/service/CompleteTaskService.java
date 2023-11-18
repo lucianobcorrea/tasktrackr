@@ -34,12 +34,18 @@ public class CompleteTaskService {
     @Autowired
     private UsuarioRepository userRepository;
 
+    @Autowired
+    private BuscarTarefaService buscarTarefaService;
+
     public void completeTask(Long id) {
 
         Usuario user = usuarioAutenticadoService.get();
 
-        Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(BAD_REQUEST));
+        Task task = buscarTarefaService.porId(id);
+
+        if(task.getStatus().equals(COMPLETED)) {
+            throw new ResponseStatusException(BAD_REQUEST, "Tarefa já foi concluída");
+        }
 
         task.setStatus(COMPLETED);
         task.setFinishDate(LocalDate.now());

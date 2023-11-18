@@ -8,7 +8,11 @@ public class UsuarioFactory {
         Usuario usuario = new Usuario();
         usuario.setId(SimpleFactory.getRandomLong());
         usuario.setNome("Usuário de teste");
-        usuario.setEmail("teste@cwi.com.br");
+        usuario.setTelefone("519999999");
+        usuario.setEmail("teste@gmail.com");
+        usuario.setFoto("fototeste.url");
+        usuario.setAtivo(true);
+        usuario.setPoints(100);
         return usuario;
     }
 }

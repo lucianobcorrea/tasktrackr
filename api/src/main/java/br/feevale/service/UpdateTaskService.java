@@ -11,6 +11,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.transaction.Transactional;
 
+import java.util.Objects;
+
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Service
@@ -19,23 +21,20 @@ public class UpdateTaskService {
     @Autowired
     private TaskRepository taskRepository;
 
+    @Autowired
+    private BuscarTarefaService buscarTarefaService;
+
     @Transactional
     public TaskResponse updateTask(UpdateTaskRequest request, Long id) {
-        Task task = byId(id);
+        Task task = buscarTarefaService.porId(id);
 
-        task.setTitle(request.getTitle());
+        task.setTitle(request.getTitle().isBlank() ? task.getTitle() : request.getTitle());
         task.setDescription(request.getDescription());
-        task.setDeadlineDate(request.getDeadlineDate());
-        task.setPriority(request.getPriority());
+        task.setDeadlineDate(Objects.isNull(request.getDeadlineDate()) ? task.getDeadlineDate() : request.getDeadlineDate());
+        task.setPriority(Objects.isNull(request.getPriority()) ? task.getPriority() : request.getPriority());
 
         taskRepository.save(task);
 
         return TaskMapper.toResponse(task);
-    }
-
-    public Task byId(Long id) {
-        return taskRepository
-                .findById(id)
-                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Task not found"));
     }
 }
