@@ -16,7 +16,7 @@ export function useLogout() {
       setUser(null);
       localStorage.removeItem(KEY);
     } catch (error) {
-      addToast(error.response.data.message);
+      console.log(error.response.data.message);
     } finally {
       navigate('/');
     }

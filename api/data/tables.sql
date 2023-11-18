@@ -24,7 +24,7 @@ CREATE TABLE task (
     priority VARCHAR(10) NOT NULL,
     status VARCHAR(20) NOT NULL,
     user_id BIGINT NOT NULL,
-    finish_date TIMESTAMP
+    finish_date DATE
 );
 ALTER TABLE task ADD CONSTRAINT pk_task PRIMARY KEY (id);
 ALTER TABLE task ADD CONSTRAINT fk_task_user FOREIGN KEY (user_id) REFERENCES Usuario (id);
