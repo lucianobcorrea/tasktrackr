@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import {
-  ChangePassScreen,
   HomeScreen,
   Profile,
   Login,
@@ -15,10 +14,6 @@ export const router = createBrowserRouter([
   {
     path: '/home',
     element: <PrivateRoute Screen={HomeScreen} />,
-  },
-  {
-    path: '/usuarios/alterar-senha/:id/:token',
-    element: <ChangePassScreen />,
   },
   {
     path: '/profile',

@@ -19,20 +19,13 @@ import './loginScreen.style.css';
 export function Login() {
   const { formInputs, handleChange, handleSubmit } = useFormInputs();
   const [registerModal, setRegisterModal] = useState(false);
-  const [forgotPass, setForgotPass] = useState(false);
   const { registerInputs, handleRegisterChange, handleRegisterSubmit } =
     useRegisterFormInputs();
-  const { emailInput, handleEmailChange, handleSendEmailSubmit } =
-    useForgotPassForm();
   const [user] = useGlobalUser();
   const navigate = useNavigate();
 
   const toggleModal = () => {
     setRegisterModal(!registerModal);
-  };
-
-  const toggleModalForgotPass = () => {
-    setForgotPass(!forgotPass);
   };
 
   useEffect(() => {
@@ -70,11 +63,6 @@ export function Login() {
             link="#"
             linkButtonName="Criar nova conta"
             action={toggleModal}
-          />
-          <LinkButton
-            link="#"
-            linkButtonName="Esqueceu sua senha?"
-            action={toggleModalForgotPass}
           />
         </FormContainer>
       </form>
@@ -130,27 +118,6 @@ export function Login() {
             />
 
             <Button>Cadastre-se</Button>
-          </Modal>
-        )}
-      </form>
-
-      <form onSubmit={handleSendEmailSubmit}>
-        {forgotPass && (
-          <Modal toggleModal={toggleModalForgotPass}>
-            <h1>Recuperação de senha</h1>
-            <p>Digite seu email cadastrado.</p>
-
-            <TextInput
-              placeholder="Ex.: email@provedor.com"
-              labelText="Email"
-              inputName="email"
-              inputType="email"
-              forId="email"
-              inputValue={emailInput.email}
-              onChange={handleEmailChange}
-            />
-
-            <Button>Enviar</Button>
           </Modal>
         )}
       </form>

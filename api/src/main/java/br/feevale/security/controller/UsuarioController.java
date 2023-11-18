@@ -4,15 +4,12 @@ import br.feevale.security.controller.request.UsuarioRequest;
 import br.feevale.security.controller.request.UsuarioUpdateRequest;
 import br.feevale.security.controller.response.EstatisticaResponse;
 import br.feevale.security.controller.response.UsuarioResponse;
-import br.feevale.security.service.BuscarUsuarioService;
-import br.feevale.security.service.EstatisticaService;
-import br.feevale.security.service.IncluirUsuarioService;
-import br.feevale.security.service.UpdateUserService;
+import br.feevale.security.service.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/usuarios")

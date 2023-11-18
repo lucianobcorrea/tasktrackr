@@ -1,19 +1,19 @@
 import { axiosInstance } from '../_base/axiosInstance';
 
-const TASKS = '/tarefas/:id';
+const TASKS = '/tasks/:id/update';
 
 export async function updateTask({
   id,
-  titulo,
-  descricao,
-  dataPrazo,
-  prioridade,
+  title,
+  description,
+  deadlineDate,
+  priority,
 }) {
-  const response = await axiosInstance.put(TASKS.replace(':id', id), {
-    titulo: titulo,
-    descricao: descricao,
-    dataPrazo: dataPrazo,
-    prioridade: prioridade,
+  const response = await axiosInstance.patch(TASKS.replace(':id', id), {
+    title: title,
+    description: description,
+    deadlineDate: deadlineDate,
+    priority: priority,
   });
   return response.data;
 }

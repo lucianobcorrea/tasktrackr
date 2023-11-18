@@ -87,7 +87,7 @@ export function HomeScreen() {
 
   useEffect(() => {
     fetchUserRanking();
-  }, []);
+  }, [userRankingData]);
 
   function toggleModal() {
     setRegisterTaskModal(!registerTaskModal);

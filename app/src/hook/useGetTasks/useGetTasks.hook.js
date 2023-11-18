@@ -3,19 +3,19 @@ import { getAllTasks } from '../../api';
 import { useToastContext } from '../../context/toast.context';
 
 export const SORT_OPTIONS = {
-  dataPrazo: 'Prazo',
-  prioridade: 'Prioridade',
-  dataCriacao: 'Data de criação',
+  deadlineDate: 'Prazo',
+  priority: 'Prioridade',
+  createdAt: 'Data de criação',
 };
 
 const PRIORITY_ENUM = {
-  ALTA: 1,
-  MEDIA: 2,
-  BAIXA: 3,
+  HIGH: 1,
+  AVERAGE: 2,
+  LOW: 3,
 };
 
 const sortObject = {
-  key: 'dataPrazo',
+  key: 'deadlineDate',
   asc: true,
 };
 
@@ -42,7 +42,7 @@ export function useGetTasks(initialFilter) {
     const asc = order !== undefined ? order : sort.asc;
 
     let sorted;
-    if (sortKey === 'prioridade') {
+    if (sortKey === 'priority') {
       sorted = tasks.sort((a, b) =>
         PRIORITY_ENUM[a[sortKey]] > PRIORITY_ENUM[b[sortKey]] ? 1 : -1
       );

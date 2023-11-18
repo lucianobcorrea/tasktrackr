@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71fd8532-c529-44f6-8a97-81c23dd23e90" name="Changes" comment="" />
+    <list default="true" id="71fd8532-c529-44f6-8a97-81c23dd23e90" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/br/feevale/security/service/AlterarSenhaValidarTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/br/feevale/security/service/CriarTokenSenhaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/br/feevale/security/service/SalvarSenhaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/br/feevale/security/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/br/feevale/security/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/api/tasks/updateTask.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/api/tasks/updateTask.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/api/users/editUser.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/api/users/editUser.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/hook/useGetTasks/useGetTasks.hook.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hook/useGetTasks/useGetTasks.hook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/hook/useUpdateTask/useUpdateTask.hook.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hook/useUpdateTask/useUpdateTask.hook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Header/header.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Header/header.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Header/header.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Header/header.style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Stats/stats.components.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Stats/stats.components.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/TaskCard/taskCard.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/TaskCard/taskCard.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/screens/Profile/profile.screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/screens/Profile/profile.screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/screens/Profile/profile.style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/screens/Profile/profile.style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +48,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/src/main/java/br/feevale/security/service" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucia\Desktop\tasktrackr\api\src\main\java\br\feevale\security\service" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -42,5 +65,19 @@
       <updated>1697587663122</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="application.yml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import avatarImage from '../../../assets/default_avatar.jpg';
 import { useEditUser, usePagination } from '../../../hook';
 import { useGetUserData } from '../../../hook/useGetUserData/useGetUserData.hook';
-import { Loading } from '../../components/Loading/loading.component';
 import {
   Button,
   Footer,
@@ -18,7 +17,6 @@ export function Profile() {
   const { handleEditChange, handleRegisterSubmit, editInputs } =
     useEditUser(userData);
   const { page, handleNextPage } = usePagination();
-  const [isLoading, setLoading] = useState(true);
 
   const toggleModal = () => {
     setChangeUserModal(!changeUserModal);
@@ -27,17 +25,6 @@ export function Profile() {
   useEffect(() => {
     fetchUserData();
   }, [page]);
-
-  useEffect(() => {
-    const intersectionObserver = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        setLoading(true);
-        handleNextPage();
-      }
-    });
-    intersectionObserver.observe(document.querySelector('#sentinel'));
-    return () => intersectionObserver.disconnect();
-  }, []);
 
   return (
     <main className="profile-main">

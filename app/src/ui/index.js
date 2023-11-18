@@ -17,7 +17,6 @@ export { Stats } from './components/Stats/stats.components';
 export { TaskCard } from './components/TaskCard/taskCard.component';
 export { TextInput } from './components/TextInput/textInput.component';
 export { Toast } from './components/Toast/toast.component';
-export { ChangePassScreen } from './screens/ChangePass/changePass.screen';
 export { HomeScreen } from './screens/Home/home.screen';
 export { Login } from './screens/Login/login.screen';
 export { Profile } from './screens/Profile/profile.screen';

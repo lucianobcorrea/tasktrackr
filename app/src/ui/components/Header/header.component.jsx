@@ -11,7 +11,10 @@ export function Header({ headerClass }) {
   return (
     <header className={`header ${headerClass}`}>
       <div className="header-container">
-        <h1>Tasktrackr</h1>
+        <label>Tasktrackr</label>
+        <Link to="/" className="link-transition">
+          Início
+        </Link>
         <div className="avatar-logout-box">
           {user.foto ? (
             <img className="avatar-img" src={user.foto} alt="foto de usuário" />
@@ -26,12 +29,12 @@ export function Header({ headerClass }) {
             <ul className="drop-down-menu-list">
               <li className="drop-down-menu-item">
                 <Link to="/profile" className="link-transition">
-                  Meu perfil
+                  <p>Meu perfil</p>
                 </Link>
               </li>
               <li className="drop-down-menu-item">
                 <Link className="link-transition" onClick={handleLogout}>
-                  Sair
+                  <p>Sair</p>
                 </Link>
               </li>
             </ul>

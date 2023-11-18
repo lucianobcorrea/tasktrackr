@@ -55,7 +55,7 @@ export function TaskCard({ data, updateInfo }) {
   function CheckButton({ status, handleComplete }) {
     return (
       <>
-        {status === 'CONCLUIDA' ? null : (
+        {status === 'COMPLETED' ? null : (
           <button onClick={handleComplete} className="task-card-button">
             <CiCircleCheck className="task-card-icon" />
           </button>
@@ -87,11 +87,11 @@ export function TaskCard({ data, updateInfo }) {
 
   function getPriorityStyle(priority) {
     switch (priority) {
-      case 'MEDIA':
+      case 'AVERAGE':
         return 'task-priority-medium';
-      case 'BAIXA':
+      case 'LOW':
         return 'task-priority-low';
-      case 'ALTA':
+      case 'HIGH':
         return 'task-priority-high';
       default:
         return 'task-priority-low';
@@ -108,7 +108,7 @@ export function TaskCard({ data, updateInfo }) {
         </div>
         <div
           className={
-            isDateExpired(deadlineDate) && status !== 'CONCLUIDA'
+            isDateExpired(deadlineDate) && status !== 'COMPLETED'
               ? 'task-card-infos-expired-date'
               : 'task-card-infos'
           }
@@ -128,29 +128,29 @@ export function TaskCard({ data, updateInfo }) {
                     <input
                       onChange={handleChange}
                       type="text"
-                      name="titulo"
-                      value={input.titulo}
+                      name="title"
+                      value={input.title}
                       className="task-input-title"
                     />
                     <textarea
                       onChange={handleChange}
-                      name="descricao"
-                      value={input.descricao}
+                      name="description"
+                      value={input.description}
                       className="task-input-description"
                     />
                     <label className="update-task-label">Alterar prazo</label>
                     <input
                       onChange={handleChange}
                       type="datetime-local"
-                      name="dataPrazo"
-                      value={input.dataPrazo}
+                      name="deadlineDate"
+                      value={input.deadlineDate}
                     />
                     <label className="update-task-label">Prioridade</label>
                     <select
-                      name="prioridade"
+                      name="priority"
                       onChange={handleChange}
                       className="task-input-priority"
-                      value={input.prioridade}
+                      value={input.priority}
                     >
                       <option value="LOW">Baixa</option>
                       <option value="AVERAGE">Média</option>

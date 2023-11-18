@@ -145,10 +145,10 @@ export function Stats({ userStats, taskMap, mapPeriodObj, handleGraphPeriod }) {
             <div className="stats-about-content-container">
               <h1 className="stats-about-point-title">O que são pontos?</h1>
               <p className="stats-about-content">
-                O sistema de pontos de nosso aplicativo visa instigar uma
-                motivação saudável para completar e atingir metas. Você pode
-                competir com você mesmo ou pode compartilhar esse sentimento com
-                outros usuários da plataforma!
+                O sistema de pontos do aplicativo visa instigar uma motivação
+                saudável para completar e atingir metas. Você pode competir com
+                você mesmo ou pode compartilhar esse sentimento com outros
+                usuários da plataforma através do Ranking!
               </p>
             </div>
             <section className="stats-level-container">
@@ -173,9 +173,9 @@ export function Stats({ userStats, taskMap, mapPeriodObj, handleGraphPeriod }) {
             <div className="stats-about-content-container">
               <h1 className="stats-about-point-title">Gráficos</h1>
               <p className="stats-about-content">
-                Para uma visualização melhor de sua produtividade, nossa
-                aplicação proporciona gráficos que medem a tendência de suas
-                tarefas concluídas por dia!
+                Para uma visualização melhor de sua produtividade, o Tasktrackr
+                proporciona gráficos que medem a tendência de suas tarefas
+                concluídas por dia!
               </p>
             </div>
             <div className="stats-about-content-container">

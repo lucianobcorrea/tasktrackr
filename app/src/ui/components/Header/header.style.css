@@ -1,6 +1,6 @@
 .header {
   background: #2054b6;
-  height: 10vh;
+  height: 11vh;
 }
 
 .header-follows-scroll {
@@ -17,8 +17,10 @@
   height: 100%;
 }
 
-.header-container h1 {
+.header-container label {
   color: #fff;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 .menu {
@@ -46,7 +48,7 @@ li > a {
   color: #fff;
   text-decoration: none;
   position: relative;
-  font-size: 19px;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -101,7 +103,6 @@ li > a {
   position: absolute;
   bottom: 105%;
   left: 45%;
-  margin-left: 5px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent white transparent;
@@ -115,6 +116,10 @@ li > a {
 
 .drop-down-menu-item {
   list-style-type: none;
+}
+
+.drop-down-menu-item p {
+  font-size: 20px;
 }
 
 @keyframes dropdown-animation {
