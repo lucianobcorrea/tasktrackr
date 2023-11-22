@@ -19,7 +19,12 @@ Todas as rotas que contém um id, são do seguinte formato:
     - Atualizar uma tarefa: **`PUT /tarefas/{id}`**
     - Remover uma tarefa: **`DELETE /tarefas/{id}`**
     - Concluir uma tarefa: **`PATCH /tarefas/{id}/concluir`**
-
+- Usuários
+    - Criar um usuário: **`POST /usuarios`**
+    - Atualizar um usuário: **`PATCH /usuarios/update`**
+    - Buscar usuário logado: **`GET /usuarios/me`**
+    - Atualizar uma tarefa: **`PUT /tarefas/{id}`**
+ 
 ## Dados do banco
 
 ### Schema
